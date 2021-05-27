@@ -234,8 +234,8 @@ loggit(1, "ERR: unused arguments:",@ARGV) if(@ARGV>0); # do something w/ remaini
 $debug= $DEBUG; # dont need both
 $tidyup= 1 unless($dryrun); #was ||$debug;  default on unless debug|dryrun ?
 
-my $APPblastn=`which -a blastn | grep conda`;#findapp2("blastn");
-my $APPmakeblastdb=`which -a makeblastdb | grep conda`; #findapp2("makeblastdb");
+my $APPblastn= findapp("blastn");
+my $APPmakeblastdb= findapp("makeblastdb");
 my $APPlastz="echo MISSING_lastz";
  	 $APPlastz= findapp("lastz") if ($USE_LASTZ); # nodebug $debug;
 	 ## lastz 04.15 testing still; 2013.03.24 : replace blastn default for basic local align: better at finding perfect local aligns
